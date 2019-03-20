@@ -1,7 +1,7 @@
 # Progra3-HumanResources
 Aplicación de Gestión de Recursos Humanos
 
-By: Luis Felix (2017-xxxx) • Gouri Ramirez (2017-5184)
+By: Luis Felix (2017-4475) • Gouri Ramirez (2017-5184)
 
 # ----- MÓDULO DE MANTENIMIENTOS -----
 # Mantenimiento de empleados
