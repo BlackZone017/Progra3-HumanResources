@@ -15,19 +15,19 @@ fechaIngreso datetime,
 salario int,
 estatus varchar(10),
 CONSTRAINT PK_Empleado PRIMARY KEY( id ),
-/* CONSTRAINT FK_Empleado_Departamneto FOREIGN KEY (idDepartamento)   ------Lo mismo aqui
- REFERENCES Departamneto (id)*/
+CONSTRAINT FK_Empleado_Departamneto FOREIGN KEY (idDepartamento)  --chequea a ver porque da error 
+ REFERENCES Departamento (id),                                   ---(no la corri en la db cheuqea eso)
+CONSTRAINT FK_Empleado_Cargo FOREIGN KEY (idCargo)    --chequea a ver porque da error 
+ REFERENCES Cargo (id),
+CONSTRAINT UQ_codigoEmpleado UNIQUE( codigoEmpleado )
 )
 
 CREATE TABLE Encargado(
 idEncargado int identity, 
 idEmpleado int not null,					--FORANEA DE EMPLEADO
-idDepartamento int not null,				--FORANEA DE DEPARTAMENTO  ---poque la foranea esta aqui tambien
 CONSTRAINT PK_Encargado PRIMARY KEY( idEncargado ),
  CONSTRAINT FK_Encargado_Empleado FOREIGN KEY (idEmpleado) 
- REFERENCES Empleado (id),
-/* CONSTRAINT FK_Encargado_Departamento FOREIGN KEY (idDepartamento) 
- REFERENCES Departamento (id)*/  
+ REFERENCES Empleado (id)
 )
 
 CREATE TABLE Departamento(
@@ -36,15 +36,17 @@ codigoDepartamento varchar(6),	-- UNIQUE INDEX
 nombre varchar(25),
 idEncargado int	not null,			--FORANEA DE ENCARGADO   ---poque la foranea esta aqui
 CONSTRAINT PK_Departamento PRIMARY KEY( id ),
- /*CONSTRAINT FK_Departamento_Encargado FOREIGN KEY (idEncargado) 
- REFERENCES Encargado (idEncargado)*/
+ CONSTRAINT FK_Departamento_Encargado FOREIGN KEY (idEncargado) 
+ REFERENCES Encargado (idEncargado),
+CONSTRAINT UQ_codigoDepartamento UNIQUE( codigoDepartamento )
 )
 
 CREATE TABLE Cargo(
 id int identity,
 codigoCargo varchar(6),			-- UNIQUE INDEX
 cargo varchar(25),
-CONSTRAINT PK_Cargo PRIMARY KEY( id )
+CONSTRAINT PK_Cargo PRIMARY KEY( id ),
+CONSTRAINT UQ_codigoCargo UNIQUE( codigoCargo )
 )
 
 CREATE TABLE Nomina(
@@ -55,7 +57,6 @@ montoTotal decimal(5,2),
 CONSTRAINT PK_Nomina PRIMARY KEY( idNomina )
 )
 
----... cont Luis...
 CREATE TABLE Salida(
 id int identity,
 idEmpleado int not null,  --FORANEA DE EMPLEADO
