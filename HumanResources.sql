@@ -39,9 +39,42 @@ CREATE TABLE Nomina(
 idNomina int primary key identity,
 año int,
 mes int,
-montoTotal int)
+montoTotal decimal(5,2)
+)
 
 ---... cont Luis...
+CREATE TABLE Salida(
+id int primary key identity,
+idEmpleado int,  --FORANEA DE EMPLEADO
+tipoSalida varchar(10),   ---ver este
+motivo varchar(100),
+fechaSalida datetime
+)
 
+CREATE TABLE Vacaciones(
+id int primary key identity,
+idEmpleado int,  --FORANEA DE EMPLEADO
+desde datetime,   
+hasta datetime,
+correspondiente date,
+comentarios varchar(200)
+)
+
+CREATE TABLE Permisos(
+id int primary key identity,
+idEmpleado int,  --FORANEA DE EMPLEADO
+desde datetime,   
+hasta datetime,
+comentarios varchar(200)
+)
+
+CREATE TABLE Licencias(
+id int primary key identity,
+idEmpleado int,  --FORANEA DE EMPLEADO
+desde datetime,   
+hasta datetime,
+motivos varchar(100),
+comentarios varchar(100)
+)
 
 --// ---------- CREACION DE CONSTRAINTS ---------- \\--
