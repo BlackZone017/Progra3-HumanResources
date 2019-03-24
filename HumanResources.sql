@@ -34,7 +34,7 @@ CREATE TABLE Departamento(
 id int identity,
 codigoDepartamento varchar(6),	-- UNIQUE INDEX
 nombre varchar(25),
-idEncargado int	not null,			--FORANEA DE ENCARGADO   ---poque la foranea esta aqui
+idEncargado int	not null,			--FORANEA DE ENCARGADO
 CONSTRAINT PK_Departamento PRIMARY KEY( id ),
  CONSTRAINT FK_Departamento_Encargado FOREIGN KEY (idEncargado) 
  REFERENCES Encargado (idEncargado),
