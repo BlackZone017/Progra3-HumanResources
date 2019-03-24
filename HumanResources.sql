@@ -2,7 +2,7 @@ create database HumanResources
 
 use HumanResources
 
---// ---------- CREACION DE TABLAS ---------- \\--
+--// ---------- CREACION DE TABLAS Y CONSTRAINTS ---------- \\--
 CREATE TABLE Empleado(
 id int identity,
 codigoEmpleado varchar(6),		-- UNIQUE INDEX
@@ -16,7 +16,7 @@ salario int,
 estatus varchar(10),
 CONSTRAINT PK_Empleado PRIMARY KEY( id ),
 CONSTRAINT FK_Empleado_Departamneto FOREIGN KEY (idDepartamento)  --chequea a ver porque da error 
- REFERENCES Departamento (id),                                   ---(no la corri en la db cheuqea eso)
+ REFERENCES Departamento (id),                                ---(no la corri en la db cheuqea eso)
 CONSTRAINT FK_Empleado_Cargo FOREIGN KEY (idCargo)    --chequea a ver porque da error 
  REFERENCES Cargo (id),
 CONSTRAINT UQ_codigoEmpleado UNIQUE( codigoEmpleado )
@@ -26,7 +26,7 @@ CREATE TABLE Encargado(
 idEncargado int identity, 
 idEmpleado int not null,					--FORANEA DE EMPLEADO
 CONSTRAINT PK_Encargado PRIMARY KEY( idEncargado ),
- CONSTRAINT FK_Encargado_Empleado FOREIGN KEY (idEmpleado) 
+CONSTRAINT FK_Encargado_Empleado FOREIGN KEY (idEmpleado) 
  REFERENCES Empleado (id)
 )
 
@@ -36,7 +36,7 @@ codigoDepartamento varchar(6),	-- UNIQUE INDEX
 nombre varchar(25),
 idEncargado int	not null,			--FORANEA DE ENCARGADO
 CONSTRAINT PK_Departamento PRIMARY KEY( id ),
- CONSTRAINT FK_Departamento_Encargado FOREIGN KEY (idEncargado) 
+CONSTRAINT FK_Departamento_Encargado FOREIGN KEY (idEncargado) 
  REFERENCES Encargado (idEncargado),
 CONSTRAINT UQ_codigoDepartamento UNIQUE( codigoDepartamento )
 )
@@ -64,7 +64,7 @@ tipoSalida varchar(10),   ---ver este
 motivo varchar(100),
 fechaSalida datetime,
 CONSTRAINT PK_Salida PRIMARY KEY( id ),
- CONSTRAINT FK_Salida_Empleado FOREIGN KEY (idEmpleado) 
+CONSTRAINT FK_Salida_Empleado FOREIGN KEY (idEmpleado) 
  REFERENCES Empleado (id)
 )
 
@@ -85,7 +85,7 @@ desde datetime,
 hasta datetime,
 comentarios varchar(200),
 CONSTRAINT PK_Permisos PRIMARY KEY( id ),
- CONSTRAINT FK_Permisos_Empleado FOREIGN KEY (idEmpleado) 
+CONSTRAINT FK_Permisos_Empleado FOREIGN KEY (idEmpleado) 
  REFERENCES Empleado (id)
 )
 
@@ -97,8 +97,6 @@ hasta datetime,
 motivos varchar(100),
 comentarios varchar(100),
 CONSTRAINT PK_Licencias PRIMARY KEY( id ),
- CONSTRAINT FK_Licencias_Empleado FOREIGN KEY (idEmpleado) 
+CONSTRAINT FK_Licencias_Empleado FOREIGN KEY (idEmpleado) 
  REFERENCES Empleado (id)
 )
-
---// ---------- CREACION DE CONSTRAINTS ---------- \\--
