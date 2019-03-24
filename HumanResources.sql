@@ -69,12 +69,14 @@ comentarios varchar(200)
 )
 
 CREATE TABLE Licencias(
-id int primary key identity,
+id int identity,
 idEmpleado int,  --FORANEA DE EMPLEADO
 desde datetime,   
 hasta datetime,
 motivos varchar(100),
-comentarios varchar(100)
+comentarios varchar(100),
+CONSTRAINT PK_Licencias PRIMARY KEY( id )
+
 )
 
 --// ---------- CREACION DE CONSTRAINTS ---------- \\--
