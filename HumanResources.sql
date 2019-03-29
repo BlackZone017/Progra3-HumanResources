@@ -109,3 +109,25 @@ ALTER TABLE licencias ADD CONSTRAINT FK_Licencias_Empleado FOREIGN KEY (idEmplea
 ALTER TABLE empleado ADD CONSTRAINT UQ_codigoEmpleado UNIQUE( codigoEmpleado )
 ALTER TABLE departamento ADD CONSTRAINT UQ_codigoDepartamento UNIQUE( codigoDepartamento )
 ALTER TABLE cargo ADD CONSTRAINT UQ_codigoCargo UNIQUE( codigoCargo )
+
+
+/**Trigger*/
+
+--Crea un trigger llamado calNomina
+CREATE TRIGGER calNomina
+--Se ejecutara en la tabla Nomina
+   ON  Nomina
+--Se ejecutara despues de un Insert o un Update a la tabla
+   AFTER INSERT,UPDATE
+AS 
+BEGIN
+	-- SET NOCOUNT ON impide que se generen mensajes de texto con cada instrucción 
+	SET NOCOUNT ON;
+    -- Se crea un Insert: cuando se inserten valores en la tabla Cinemex_Ciudades, el trigger insertara un registro en la tabla Cinemex_Cines
+    INSERT INTO Empleado
+    (ID, IDCiudad, Cine, Direccion)
+    SELECT '500', ID, 'Cinemex ' + Ciudad, 'Prueba'
+    FROM INSERTED
+--Los valores que se insertaran, seran los que esten almacenados en la tabla virtual Inserted
+END
+GO
