@@ -1,10 +1,11 @@
-create database HumanResources
+use caso1
+DROP DATABASE HumanResources
 
+create database HumanResources
 use HumanResources
 
 --// ---------- ELIMINACION DE TABLAS ---------- \\--
 DROP TABLE empleado
-DROP TABLE encargado
 DROP TABLE Departamento
 DROP TABLE cargo
 DROP TABLE nomina
@@ -44,7 +45,7 @@ cargo varchar(25)
 
 CREATE TABLE Nomina(
 idNomina int identity,
-año int,
+aï¿½o int,
 mes int,
 montoTotal decimal(11,2)
 )
@@ -111,23 +112,32 @@ ALTER TABLE departamento ADD CONSTRAINT UQ_codigoDepartamento UNIQUE( codigoDepa
 ALTER TABLE cargo ADD CONSTRAINT UQ_codigoCargo UNIQUE( codigoCargo )
 
 
-/**Trigger*/
 
---Crea un trigger llamado calNomina
-CREATE TRIGGER calNomina
---Se ejecutara en la tabla Nomina
-   ON  Nomina
---Se ejecutara despues de un Insert o un Update a la tabla
-   AFTER INSERT,UPDATE
-AS 
-BEGIN
-	-- SET NOCOUNT ON impide que se generen mensajes de texto con cada instrucción 
-	SET NOCOUNT ON;
-    -- Se crea un Insert: cuando se inserten valores en la tabla Cinemex_Ciudades, el trigger insertara un registro en la tabla Cinemex_Cines
-    INSERT INTO Empleado
-    (ID, IDCiudad, Cine, Direccion)
-    SELECT '500', ID, 'Cinemex ' + Ciudad, 'Prueba'
-    FROM INSERTED
---Los valores que se insertaran, seran los que esten almacenados en la tabla virtual Inserted
-END
-GO
+--// ---------- INSERTS ---------- \\--
+INSERT INTO Departamento VALUES('DP-001','IT',1)
+INSERT INTO Departamento VALUES('DP-002','Bases de Datos',2)
+INSERT INTO Departamento VALUES('DP-003','RR HH',3)
+INSERT INTO Departamento VALUES('DP-004','Mercadeo',4)
+INSERT INTO Departamento VALUES('DP-005','Finanzas',5)
+
+INSERT INTO cargo VALUES('CG-001','Gerente')
+INSERT INTO cargo VALUES('CG-002','Sub-Gerente')
+INSERT INTO cargo VALUES('CG-003','Desarrollador')
+INSERT INTO cargo VALUES('CG-004','DBA')
+INSERT INTO cargo VALUES('CG-005','Analista')
+
+INSERT INTO empleado VALUES('EM-001','Gouri','Ramirez','809-728-2393',2,4,GETDATE()-10,30000,'Activo',1)
+INSERT INTO empleado VALUES('EM-002','Alejandro','Santos','829-261-4569',1,3,GETDATE()-8,25000,'Activo',2)
+INSERT INTO empleado VALUES('EM-003','Wilber','Tapia','809-597-5412',3,5,GETDATE()-5,28000,'Inactivo',null)
+INSERT INTO empleado VALUES('EM-004','Kisandro','Feliz','809-569-7895',3,1,GETDATE(),35000,'Activo',4)
+INSERT INTO empleado VALUES('EM-005','Domingo','Burgos','849-825-3652',4,2,GETDATE()+1,29500,'Activo',5)
+INSERT INTO empleado VALUES('EM-006','Cristian','Feliz','809-025-4568',6,5,GETDATE()+6,21000,'Inactivo',null)
+
+SELECT * FROM empleado
+SELECT * FROM Departamento
+SELECT * FROM cargo
+SELECT * FROM nomina
+SELECT * FROM salida
+SELECT * FROM vacaciones
+SELECT * FROM permisos
+SELECT * FROM Licencias
