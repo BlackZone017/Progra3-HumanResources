@@ -6,7 +6,6 @@ use HumanResources
 
 --// ---------- ELIMINACION DE TABLAS ---------- \\--
 DROP TABLE empleado
-DROP TABLE encargado
 DROP TABLE Departamento
 DROP TABLE cargo
 DROP TABLE nomina
