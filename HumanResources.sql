@@ -25,19 +25,15 @@ idDepartamento int not null,	--FORANEA DE DEPARTAMENTO
 idCargo int not null,			--FORANEA DE CARGO
 fechaIngreso datetime,
 salario int,
-estatus varchar(10)
-)
-
-CREATE TABLE Encargado(
-idEncargado int identity, 
-idEmpleado int not null			--FORANEA DE EMPLEADO
+estatus varchar(10),
+idManager int
 )
 
 CREATE TABLE Departamento(
 id int identity,
 codigoDepartamento varchar(6),	-- UNIQUE INDEX
 nombre varchar(25),
-idEncargado int	not null		--FORANEA DE ENCARGADO
+idManager int
 )
 
 CREATE TABLE Cargo(
@@ -92,7 +88,6 @@ comentarios varchar(100)
 --//-----------          PK        ----------------\\--
 
 ALTER TABLE empleado ADD CONSTRAINT PK_Empleado PRIMARY KEY( id )
-ALTER TABLE encargado ADD CONSTRAINT PK_Encargado PRIMARY KEY( idEncargado )
 ALTER TABLE departamento ADD CONSTRAINT PK_Departamento PRIMARY KEY( id )
 ALTER TABLE cargo ADD CONSTRAINT PK_Cargo PRIMARY KEY( id )
 ALTER TABLE nomina ADD CONSTRAINT PK_Nomina PRIMARY KEY( idNomina )
@@ -105,8 +100,6 @@ ALTER TABLE licencias ADD CONSTRAINT PK_Licencias PRIMARY KEY( id )
 
 ALTER TABLE empleado ADD CONSTRAINT FK_Empleado_Departamneto FOREIGN KEY (idDepartamento) REFERENCES Departamento (id)
 ALTER TABLE empleado ADD CONSTRAINT FK_Empleado_Cargo FOREIGN KEY (idCargo) REFERENCES Cargo (id)
-ALTER TABLE encargado ADD CONSTRAINT FK_Encargado_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
-ALTER TABLE departamento ADD CONSTRAINT FK_Departamento_Encargado FOREIGN KEY (idEncargado) REFERENCES Encargado (idEncargado)
 ALTER TABLE salida ADD CONSTRAINT FK_Salida_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 ALTER TABLE permisos ADD CONSTRAINT FK_Permisos_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 ALTER TABLE licencias ADD CONSTRAINT FK_Licencias_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
