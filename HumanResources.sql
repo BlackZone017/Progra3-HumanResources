@@ -34,7 +34,7 @@ CREATE TABLE Departamento(
 id int identity,
 codigoDepartamento varchar(6),	-- UNIQUE INDEX
 nombre varchar(25),
-idManager int 		
+idManager int
 )
 
 CREATE TABLE Cargo(
@@ -86,6 +86,8 @@ comentarios varchar(100)
 
 --// ---------- CREACION DE CONSTRAINTS ---------- \\--
 
+--//-----------          PK        ----------------\\--
+
 ALTER TABLE empleado ADD CONSTRAINT PK_Empleado PRIMARY KEY( id )
 ALTER TABLE departamento ADD CONSTRAINT PK_Departamento PRIMARY KEY( id )
 ALTER TABLE cargo ADD CONSTRAINT PK_Cargo PRIMARY KEY( id )
@@ -95,11 +97,15 @@ ALTER TABLE Vacaciones ADD CONSTRAINT PK_Vacaciones PRIMARY KEY( id )
 ALTER TABLE permisos ADD CONSTRAINT PK_Permisos PRIMARY KEY( id )
 ALTER TABLE licencias ADD CONSTRAINT PK_Licencias PRIMARY KEY( id )
 
+--//-----------          FK        ----------------\\--
+
 ALTER TABLE empleado ADD CONSTRAINT FK_Empleado_Departamneto FOREIGN KEY (idDepartamento) REFERENCES Departamento (id)
 ALTER TABLE empleado ADD CONSTRAINT FK_Empleado_Cargo FOREIGN KEY (idCargo) REFERENCES Cargo (id)
 ALTER TABLE salida ADD CONSTRAINT FK_Salida_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 ALTER TABLE permisos ADD CONSTRAINT FK_Permisos_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 ALTER TABLE licencias ADD CONSTRAINT FK_Licencias_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
+
+--//-----------          UQ       ----------------\\--
 
 ALTER TABLE empleado ADD CONSTRAINT UQ_codigoEmpleado UNIQUE( codigoEmpleado )
 ALTER TABLE departamento ADD CONSTRAINT UQ_codigoDepartamento UNIQUE( codigoDepartamento )
