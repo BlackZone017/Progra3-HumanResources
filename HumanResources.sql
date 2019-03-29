@@ -1,4 +1,4 @@
-use caso1
+﻿use caso1
 DROP DATABASE HumanResources
 
 create database HumanResources
@@ -25,7 +25,7 @@ telefono varchar(15),
 idDepartamento int not null,	--FORANEA DE DEPARTAMENTO
 idCargo int not null,			--FORANEA DE CARGO
 fechaIngreso datetime,
-salario int,
+salario decimal(13,2),
 estatus varchar(10),
 idManager int
 )
@@ -45,9 +45,9 @@ cargo varchar(25)
 
 CREATE TABLE Nomina(
 idNomina int identity,
-a�o int,
+año int,
 mes int,
-montoTotal decimal(11,2)
+montoTotal decimal(13,2)
 )
 
 CREATE TABLE Salida(
@@ -141,3 +141,30 @@ SELECT * FROM salida
 SELECT * FROM vacaciones
 SELECT * FROM permisos
 SELECT * FROM Licencias
+
+/**Trigger*/
+
+--Crea un trigger llamado calNomina
+CREATE TRIGGER calNomina
+--Se ejecutara en la tabla Empleado
+   ON  Empleado
+--Se ejecutara despues de un Insert o un Update a la tabla
+   AFTER INSERT,UPDATE
+AS 
+BEGIN
+	declare @id int
+	declare @salario decimal(13,2)
+	declare @impuesto decimal(13,2)
+	set @impuesto = 0.0591
+	-- SET NOCOUNT ON impide que se generen mensajes de texto con cada instrucci�n 
+	SET NOCOUNT ON;
+    -- Se crea un Insert: cuando se inserten valores en la tabla Empleado, el trigger insertara un registro en la tabla Nomina
+    INSERT INTO Nomina
+    (montoTotal)
+    SELECT e.id, e.salario
+    FROM INSERTED e
+	set @salario = @salario - @impuesto
+	
+--Los valores que se insertaran, seran los que esten almacenados en la tabla virtual Inserted
+END
+GO
