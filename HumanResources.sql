@@ -1,5 +1,7 @@
-create database HumanResources
+use caso1
+DROP DATABASE HumanResources
 
+create database HumanResources
 use HumanResources
 
 --// ---------- ELIMINACION DE TABLAS ---------- \\--
@@ -25,19 +27,15 @@ idDepartamento int not null,	--FORANEA DE DEPARTAMENTO
 idCargo int not null,			--FORANEA DE CARGO
 fechaIngreso datetime,
 salario int,
-estatus varchar(10)
-)
-
-CREATE TABLE Encargado(
-idEncargado int identity, 
-idEmpleado int not null			--FORANEA DE EMPLEADO
+estatus varchar(10),
+idManager int
 )
 
 CREATE TABLE Departamento(
 id int identity,
 codigoDepartamento varchar(6),	-- UNIQUE INDEX
 nombre varchar(25),
-idEncargado int	not null		--FORANEA DE ENCARGADO
+idManager int 		
 )
 
 CREATE TABLE Cargo(
@@ -90,7 +88,6 @@ comentarios varchar(100)
 --// ---------- CREACION DE CONSTRAINTS ---------- \\--
 
 ALTER TABLE empleado ADD CONSTRAINT PK_Empleado PRIMARY KEY( id )
-ALTER TABLE encargado ADD CONSTRAINT PK_Encargado PRIMARY KEY( idEncargado )
 ALTER TABLE departamento ADD CONSTRAINT PK_Departamento PRIMARY KEY( id )
 ALTER TABLE cargo ADD CONSTRAINT PK_Cargo PRIMARY KEY( id )
 ALTER TABLE nomina ADD CONSTRAINT PK_Nomina PRIMARY KEY( idNomina )
@@ -101,8 +98,6 @@ ALTER TABLE licencias ADD CONSTRAINT PK_Licencias PRIMARY KEY( id )
 
 ALTER TABLE empleado ADD CONSTRAINT FK_Empleado_Departamneto FOREIGN KEY (idDepartamento) REFERENCES Departamento (id)
 ALTER TABLE empleado ADD CONSTRAINT FK_Empleado_Cargo FOREIGN KEY (idCargo) REFERENCES Cargo (id)
-ALTER TABLE encargado ADD CONSTRAINT FK_Encargado_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
-ALTER TABLE departamento ADD CONSTRAINT FK_Departamento_Encargado FOREIGN KEY (idEncargado) REFERENCES Encargado (idEncargado)
 ALTER TABLE salida ADD CONSTRAINT FK_Salida_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 ALTER TABLE permisos ADD CONSTRAINT FK_Permisos_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 ALTER TABLE licencias ADD CONSTRAINT FK_Licencias_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
@@ -110,3 +105,33 @@ ALTER TABLE licencias ADD CONSTRAINT FK_Licencias_Empleado FOREIGN KEY (idEmplea
 ALTER TABLE empleado ADD CONSTRAINT UQ_codigoEmpleado UNIQUE( codigoEmpleado )
 ALTER TABLE departamento ADD CONSTRAINT UQ_codigoDepartamento UNIQUE( codigoDepartamento )
 ALTER TABLE cargo ADD CONSTRAINT UQ_codigoCargo UNIQUE( codigoCargo )
+
+
+--// ---------- INSERTS ---------- \\--
+INSERT INTO Departamento VALUES('DP-001','IT',1)
+INSERT INTO Departamento VALUES('DP-002','Bases de Datos',2)
+INSERT INTO Departamento VALUES('DP-003','RR HH',3)
+INSERT INTO Departamento VALUES('DP-004','Mercadeo',4)
+INSERT INTO Departamento VALUES('DP-005','Finanzas',5)
+
+INSERT INTO cargo VALUES('CG-001','Gerente')
+INSERT INTO cargo VALUES('CG-002','Sub-Gerente')
+INSERT INTO cargo VALUES('CG-003','Desarrollador')
+INSERT INTO cargo VALUES('CG-004','DBA')
+INSERT INTO cargo VALUES('CG-005','Analista')
+
+INSERT INTO empleado VALUES('EM-001','Gouri','Ramirez','809-728-2393',2,4,GETDATE()-10,30000,'Activo',1)
+INSERT INTO empleado VALUES('EM-002','Alejandro','Santos','829-261-4569',1,3,GETDATE()-8,25000,'Activo',2)
+INSERT INTO empleado VALUES('EM-003','Wilber','Tapia','809-597-5412',3,5,GETDATE()-5,28000,'Inactivo',null)
+INSERT INTO empleado VALUES('EM-004','Kisandro','Feliz','809-569-7895',3,1,GETDATE(),35000,'Activo',4)
+INSERT INTO empleado VALUES('EM-005','Domingo','Burgos','849-825-3652',4,2,GETDATE()+1,29500,'Activo',5)
+INSERT INTO empleado VALUES('EM-006','Cristian','Feliz','809-025-4568',6,5,GETDATE()+6,21000,'Inactivo',null)
+
+SELECT * FROM empleado
+SELECT * FROM Departamento
+SELECT * FROM cargo
+SELECT * FROM nomina
+SELECT * FROM salida
+SELECT * FROM vacaciones
+SELECT * FROM permisos
+SELECT * FROM Licencias
