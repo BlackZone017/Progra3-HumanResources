@@ -163,6 +163,7 @@ BEGIN
     (montoTotal)
     SELECT e.id, e.salario
     FROM INSERTED e
+	where e.id= @id 
 	set @salario = @salario - @impuesto
 	
 --Los valores que se insertaran, seran los que esten almacenados en la tabla virtual Inserted
