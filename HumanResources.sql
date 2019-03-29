@@ -19,9 +19,6 @@ CREATE TRIGGER salidaEmpleado		--Crea un trigger llamado salidaEmpleado
 END
 GO
 
-use caso1
-DROP DATABASE HumanResources
-
 create database HumanResources
 use HumanResources
 
@@ -170,5 +167,3 @@ SELECT * FROM nomina
 SELECT * FROM vacaciones
 SELECT * FROM permisos
 SELECT * FROM Licencias
-
-
