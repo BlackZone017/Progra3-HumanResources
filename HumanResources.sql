@@ -1,4 +1,25 @@
-﻿use caso1
+﻿/**Trigger*/
+
+CREATE TRIGGER salidaEmpleado		--Crea un trigger llamado salidaEmpleado
+   ON  Salida						--Se ejecutara en la tabla Salida
+   AFTER INSERT,UPDATE				--Se ejecutara despues de un Insert o un Update a la tabla
+   AS
+   BEGIN
+	declare @idEmpleado int
+
+	-- SET NOCOUNT ON impide que se generen mensajes de texto con cada instrucci�n 
+	SET NOCOUNT ON;
+        
+	-- Le paso el valor del idEmpleado de la tabla salida, a la variable ya creada
+    SET @idEmpleado = (SELECT e.idEmpleado FROM INSERTED e)
+	
+	-- Finalmente, pongo como inactivo en la tabla empleado... el empleado que se introdujo en la tabla salida
+	UPDATE empleado SET estatus ='Inactivo' WHERE id = @idEmpleado
+	
+END
+GO
+
+use caso1
 DROP DATABASE HumanResources
 
 create database HumanResources
@@ -131,40 +152,23 @@ INSERT INTO empleado VALUES('EM-002','Alejandro','Santos','829-261-4569',1,3,GET
 INSERT INTO empleado VALUES('EM-003','Wilber','Tapia','809-597-5412',3,5,GETDATE()-5,28000,'Inactivo',null)
 INSERT INTO empleado VALUES('EM-004','Kisandro','Feliz','809-569-7895',3,1,GETDATE(),35000,'Activo',4)
 INSERT INTO empleado VALUES('EM-005','Domingo','Burgos','849-825-3652',4,2,GETDATE()+1,29500,'Activo',5)
-INSERT INTO empleado VALUES('EM-006','Cristian','Feliz','809-025-4568',6,5,GETDATE()+6,21000,'Inactivo',null)
+INSERT INTO empleado VALUES('EM-006','Cristian','Feliz','809-025-4568',5,5,GETDATE()+6,21000,'Inactivo',null)
+
+--Registro insertado para probar salida antes de crear el trigger
+INSERT INTO empleado VALUES('EM-007','Oliver','Queen','809-111-1234',5,5, '2019-04-13',25000,'activo',null)
+
+--Creo el trigger y luego ejecuto esta query
+INSERT INTO salida VALUES(11,'despido','HA sido despedido','2019-05-13')
 
 SELECT * FROM empleado
 SELECT * FROM Departamento
 SELECT * FROM cargo
-SELECT * FROM nomina
 SELECT * FROM salida
+
+--FALTANTES POR INSERTS--
+SELECT * FROM nomina
 SELECT * FROM vacaciones
 SELECT * FROM permisos
 SELECT * FROM Licencias
 
-/**Trigger*/
 
---Crea un trigger llamado calNomina
-CREATE TRIGGER calNomina
---Se ejecutara en la tabla Empleado
-   ON  Empleado
---Se ejecutara despues de un Insert o un Update a la tabla
-   AFTER INSERT,UPDATE
-AS 
-BEGIN
-	declare @id int
-	declare @salario decimal(13,2)
-	declare @impuesto decimal(13,2)
-	set @impuesto = 0.0591
-	-- SET NOCOUNT ON impide que se generen mensajes de texto con cada instrucci�n 
-	SET NOCOUNT ON;
-    -- Se crea un Insert: cuando se inserten valores en la tabla Empleado, el trigger insertara un registro en la tabla Nomina
-    INSERT INTO Nomina
-    (montoTotal)
-    SELECT e.id, e.salario
-    FROM INSERTED e
-	set @salario = @salario - @impuesto
-	
---Los valores que se insertaran, seran los que esten almacenados en la tabla virtual Inserted
-END
-GO
