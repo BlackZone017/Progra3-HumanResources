@@ -81,7 +81,7 @@ id int identity,
 idEmpleado int not null,  --FORANEA DE EMPLEADO
 desde datetime,   
 hasta datetime,
-correspondiente date,
+correspondiente int,
 comentarios varchar(200)
 )
 
@@ -122,6 +122,7 @@ ALTER TABLE empleado ADD CONSTRAINT FK_Empleado_Cargo FOREIGN KEY (idCargo) REFE
 ALTER TABLE salida ADD CONSTRAINT FK_Salida_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 ALTER TABLE permisos ADD CONSTRAINT FK_Permisos_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 ALTER TABLE licencias ADD CONSTRAINT FK_Licencias_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
+ALTER TABLE vacaciones ADD CONSTRAINT FK_vacaciones_Empleado FOREIGN KEY (idEmpleado) REFERENCES Empleado (id)
 
 --//-----------          UQ       ----------------\\--
 
@@ -152,18 +153,28 @@ INSERT INTO empleado VALUES('EM-005','Domingo','Burgos','849-825-3652',4,2,GETDA
 INSERT INTO empleado VALUES('EM-006','Cristian','Feliz','809-025-4568',5,5,GETDATE()+6,21000,'Inactivo',null)
 
 --Registro insertado para probar salida antes de crear el trigger
-INSERT INTO empleado VALUES('EM-007','Oliver','Queen','809-111-1234',5,5, '2019-04-13',25000,'activo',null)
+INSERT INTO empleado VALUES('EM-007','Oliver','Queen','809-111-1234',5, 2, '2019-04-13',25000,'activo',null)
 
 --Creo el trigger y luego ejecuto esta query
 INSERT INTO salida VALUES(11,'despido','HA sido despedido','2019-05-13')
+
+
+INSERT INTO vacaciones VALUES(1,GETDATE()-15,GETDATE()-7,2019,'Vacaciones Familiares')
+INSERT INTO vacaciones VALUES(2,GETDATE()-4,GETDATE()+1,2019,'Vacaciones a otro pais')
+INSERT INTO vacaciones VALUES(4,GETDATE()-1,GETDATE()+5,2019,'Vacaciones Vacaciones')
+
+INSERT INTO permisos VALUES(5,GETDATE(),GETDATE()+1,'Hijo Enfermo')
+INSERT INTO permisos VALUES(4,GETDATE()+6,GETDATE() +8,'Problemas de Salud')
+
+INSERT INTO Licencias VALUES(4,GETDATE()+8,GETDATE()+31,'Salud','Comentario 1')
 
 SELECT * FROM empleado
 SELECT * FROM Departamento
 SELECT * FROM cargo
 SELECT * FROM salida
-
---FALTANTES POR INSERTS--
-SELECT * FROM nomina
 SELECT * FROM vacaciones
 SELECT * FROM permisos
 SELECT * FROM Licencias
+
+--FALTANTES POR INSERTS--
+SELECT * FROM nomina
