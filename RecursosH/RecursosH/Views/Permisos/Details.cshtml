@@ -1,0 +1,50 @@
+﻿@model RecursosH.Models.Permiso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Permiso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.codigoEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.codigoEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.desde)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.desde)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hasta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hasta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comentarios)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comentarios)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Volver a Lista", "Index")
+</p>

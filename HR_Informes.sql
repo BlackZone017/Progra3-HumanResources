@@ -44,7 +44,7 @@ WHERE DATEPART(Month,fechaIngreso) = 3 --Siendo 3 el mes que ponga el usuario (v
 ALTER PROCEDURE salidasMes(@mes int)
 AS BEGIN
 SELECT e.nombre +' '+e.apellido as "Empleado" ,s.* FROM salida s
-JOIN Empleado e ON (s.idEmpleado = e.id)
+JOIN Empleado e ON (s.idE0mpleado = e.id)
 WHERE DATEPART(Month,fechaSalida) = @mes --Siendo 3 el mes que ponga el usuario (variable mes)
 END 
 
