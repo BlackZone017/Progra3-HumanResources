@@ -86,6 +86,33 @@ body
     box-shadow: 0 0 0 400px #1e4de9;
 }
 
+.container-mio .box-mio:nth-child(4) .icon-mio {
+    box-shadow: 0 0 0 0 #5e137c;
+    background: #5e137c;
+}
+
+.container-mio .box-mio:nth-child(4):hover .icon-mio {
+    box-shadow: 0 0 0 400px #5e137c;
+}
+
+.container-mio .box-mio:nth-child(5) .icon-mio {
+    box-shadow: 0 0 0 0 #737a0d;
+    background: #737a0d;
+}
+
+.container-mio .box-mio:nth-child(5):hover .icon-mio {
+    box-shadow: 0 0 0 400px #737a0d;
+}
+
+.container-mio .box-mio:nth-child(6) .icon-mio {
+    box-shadow: 0 0 0 0 #0b5d7e;
+    background: #0b5d7e;
+}
+
+.container-mio .box-mio:nth-child(6):hover .icon-mio {
+    box-shadow: 0 0 0 400px #0b5d7e;
+}
+
 .container-mio .box-mio .content-mio {
     position: relative;
     z-index: 1;
