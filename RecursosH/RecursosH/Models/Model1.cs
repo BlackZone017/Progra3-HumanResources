@@ -30,7 +30,7 @@ namespace RecursosH.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Cargo>()
-                .Property(e => e.cargo1)
+                .Property(e => e.cargo)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Cargo>()

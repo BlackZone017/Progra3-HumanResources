@@ -1,0 +1,40 @@
+﻿@model RecursosH.Models.Cargo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Cargo</h2>
+
+<h3>Seguro que quieres eliminar el Cargo?</h3>
+<div>
+    <h4>Cargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.codigoCargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codigoCargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cargo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a Lista", "Index")
+        </div>
+    }
+</div>

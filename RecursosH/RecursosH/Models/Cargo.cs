@@ -22,7 +22,7 @@ namespace RecursosH.Models
 
         [Column("cargo")]
         [StringLength(25)]
-        public string cargo1 { get; set; }
+        public string cargo { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Empleado> Empleadoes { get; set; }
