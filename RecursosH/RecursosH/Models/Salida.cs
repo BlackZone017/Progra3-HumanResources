@@ -13,7 +13,6 @@ namespace RecursosH.Models
 
         public int idEmpleado { get; set; }
 
-        [StringLength(10)]
         public string tipoSalida { get; set; }
 
         [StringLength(100)]
@@ -22,5 +21,12 @@ namespace RecursosH.Models
         public DateTime? fechaSalida { get; set; }
 
         public virtual Empleado Empleado { get; set; }
+    }
+
+    public enum TipoSalida
+    {
+        Renuncia,
+        Despido,
+        Deshaucio
     }
 }

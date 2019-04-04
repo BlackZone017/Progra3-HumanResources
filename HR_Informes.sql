@@ -41,10 +41,16 @@ WHERE DATEPART(Month,fechaIngreso) = 3 --Siendo 3 el mes que ponga el usuario (v
 --------SALIDAS--------
 --Linq en asp para esta query
 --Salida de empleados por mes. Visualizar las salidas (empleados creados, ingresados) en un mes determinado por el usuario
-SELECT (nombre + ' ' + apellido) "Empleado",CAST(fechaIngreso as varchar(12)) as 'Ingreso', estatus FROM empleado
-WHERE estatus = 'Inactivo' and DATEPART(Month,fechaIngreso) = 3 --Siendo 3 el mes que ponga el usuario (variable mes)
+ALTER PROCEDURE salidasMes(@mes int)
+AS BEGIN
+SELECT e.nombre +' '+e.apellido as "Empleado" ,s.* FROM salida s
+JOIN Empleado e ON (s.idEmpleado = e.id)
+WHERE DATEPART(Month,fechaSalida) = @mes --Siendo 3 el mes que ponga el usuario (variable mes)
+END 
 
+exec salidasMes 4
 
+SELECT * FROM Salida
 --------VACACIONES--------
 --Linq en asp para esta query para que el usuario pueda buscar por año
 SELECT * FROM vacaciones

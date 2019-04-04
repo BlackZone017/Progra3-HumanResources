@@ -114,8 +114,8 @@ namespace RecursosH.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Salida>()
-                .Property(e => e.tipoSalida)
-                .IsUnicode(false);
+                .Property(e => e.tipoSalida).GetType();
+                //.IsUnicode(false);
 
             modelBuilder.Entity<Salida>()
                 .Property(e => e.motivo)

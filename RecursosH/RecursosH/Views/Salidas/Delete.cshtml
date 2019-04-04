@@ -1,0 +1,56 @@
+﻿@model RecursosH.Models.Salida
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Salida</h2>
+
+<h3>Seguro que desea eliminar esta salida?</h3>
+<div>
+    <h4>Salida</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.codigoEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.codigoEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.motivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.motivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaSalida)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a Lista", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<RecursosH.Models.Salida>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Procesar Salidas</h2>
+
+<p>
+    @Html.ActionLink("Agregar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado.codigoEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoSalida)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.motivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaSalida)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado.codigoEmpleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoSalida)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.motivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaSalida)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

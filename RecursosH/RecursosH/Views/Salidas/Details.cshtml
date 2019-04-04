@@ -1,0 +1,50 @@
+﻿@model RecursosH.Models.Salida
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Salida</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empleado.codigoEmpleado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.codigoEmpleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoSalida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.motivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.motivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaSalida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaSalida)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Volver a Lista", "Index")
+</p>
