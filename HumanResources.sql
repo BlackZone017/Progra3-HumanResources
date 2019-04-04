@@ -156,7 +156,7 @@ INSERT INTO empleado VALUES('EM-006','Cristian','Feliz','809-025-4568',5,5,GETDA
 INSERT INTO empleado VALUES('EM-007','Oliver','Queen','809-111-1234',5, 2, '2019-04-13',25000,'activo',null)
 
 --Creo el trigger y luego ejecuto esta query
-INSERT INTO salida VALUES(11,'despido','HA sido despedido','2019-05-13')
+INSERT INTO salida VALUES(7,'despido','HA sido despedido','2019-05-13')
 
 
 INSERT INTO vacaciones VALUES(1,GETDATE()-15,GETDATE()-7,2019,'Vacaciones Familiares')
@@ -178,3 +178,5 @@ SELECT * FROM Licencias
 
 --FALTANTES POR INSERTS--
 SELECT * FROM nomina
+
+exec sp_columns empleado
