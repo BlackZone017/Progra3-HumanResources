@@ -175,7 +175,6 @@ D:\Luis Felix\Luis\Github\Progra3-HumanResources\RecursosH\RecursosH\bin\es\Syst
 D:\Luis Felix\Luis\Github\Progra3-HumanResources\RecursosH\RecursosH\bin\es\System.Web.WebPages.resources.dll
 D:\Luis Felix\Luis\Github\Progra3-HumanResources\RecursosH\RecursosH\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\Luis Felix\Luis\Github\Progra3-HumanResources\RecursosH\RecursosH\bin\es\System.Web.WebPages.Razor.resources.dll
-D:\Luis Felix\Luis\Github\Progra3-HumanResources\RecursosH\RecursosH\obj\Debug\RecursosH.csprojAssemblyReference.cache
 D:\Luis Felix\Luis\Github\Progra3-HumanResources\RecursosH\RecursosH\obj\Debug\RecursosH.csproj.CoreCompileInputs.cache
 D:\Luis Felix\Luis\Github\Progra3-HumanResources\RecursosH\RecursosH\obj\Debug\RecursosH.csproj.CopyComplete
 D:\Luis Felix\Luis\Github\Progra3-HumanResources\RecursosH\RecursosH\obj\Debug\RecursosH.dll
