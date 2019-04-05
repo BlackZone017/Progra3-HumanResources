@@ -106,6 +106,7 @@ namespace RecursosH.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Empleado empleado = db.Empleadoes.Find(id);
+
             if (empleado == null)
             {
                 return HttpNotFound();
@@ -118,8 +119,14 @@ namespace RecursosH.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+
+            
+
             Empleado empleado = db.Empleadoes.Find(id);
-            db.Empleadoes.Remove(empleado);
+            //db.Empleadoes.Remove(empleado);
+
+            /*lo que le meti*/
+            empleado.estatus = "Inactivo";
             db.SaveChanges();
             return RedirectToAction("Index");
         }
