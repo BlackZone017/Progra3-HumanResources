@@ -17,6 +17,7 @@ namespace RecursosH.Controllers
         // GET: Entradas
         public ActionResult Index()
         {
+            //var entradas = from tabla in db.Entradas select tabla;
             return View(db.Entradas.ToList());
         }
 

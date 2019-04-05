@@ -20,4 +20,20 @@ namespace RecursosH.Models
         [StringLength(12)]
         public string Fecha_Entrada { get; set; }
     }
+
+    public enum Meses
+    {
+        January,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
+    }
 }
