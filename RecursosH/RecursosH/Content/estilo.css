@@ -256,13 +256,13 @@ body
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
 }
 
-    .boton-detalle:hover {
-        padding: 20px 30px;
-        background: #14a3a3;
-        border-radius: 4px;
-        text-decoration: none;
-        color: #fff;
-        font-weight: 500;
-        margin-top: 20px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-    }
+.boton-detalle:hover {
+    padding: 20px 30px;
+    background: #14a3a3;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
