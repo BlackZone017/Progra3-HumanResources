@@ -1,0 +1,64 @@
+﻿@model IEnumerable<RecursosH.Models.Vacacione>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Informe Vacaciones</h2><br />
+
+<button><a href="./InformeVacaciones" class="btn btn-block">Buscar Todos</a></button>
+@using (Html.BeginForm("Index", "InformeVacaciones", FormMethod.Get))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label("Buscar por Año") <span></span>
+
+                @Html.TextBox("correspondiente")
+                <input type="submit" value="Buscar" class="btn btn-success" /><br />
+            </div>
+        </div>
+    </div>
+}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Empleado.codigoEmpleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.desde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hasta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.correspondiente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comentarios)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empleado.codigoEmpleado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.desde)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hasta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.correspondiente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.comentarios)
+                </td>
+            </tr>
+        }
+
+    </table>
