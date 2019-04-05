@@ -15,24 +15,26 @@ namespace RecursosH.Controllers
         private Model1 db = new Model1();
 
         // GET: EmpleadosActivoes
-        [HttpGet]
-        public ActionResult Index(string nombre, string idDepart)
+        public ActionResult Index(string nombre, string idDepartamento)
         {
             var emp = from tabla in db.EmpleadosActivos select tabla;
 
-            if (!String.IsNullOrEmpty(nombre) && String.IsNullOrEmpty(idDepart))
+            if (!String.IsNullOrEmpty(nombre))
             {
-                idDepart = "0";
                 emp = emp.Where(tabla => tabla.nombre == nombre);
             }
-            else if (!String.IsNullOrEmpty(idDepart) && String.IsNullOrEmpty(nombre))
+
+            if (!String.IsNullOrEmpty(idDepartamento))
             {
                 int i = 0;
-                i = System.Convert.ToInt32(idDepart);
+                i = System.Convert.ToInt32(idDepartamento);
                 emp = emp.Where(tabla => tabla.idDepartamento == i);
             }
+
             return View(emp.ToList());
+
         }
+
 
         protected override void Dispose(bool disposing)
         {
