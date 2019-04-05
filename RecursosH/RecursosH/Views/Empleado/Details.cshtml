@@ -4,95 +4,98 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Detalles</h2>
+<h2></h2>
+<div class="container-mio-2">
+    <div class="box-mio-2">
+        <div>
+            <h1>Detalles de Empleado: @Model.nombre @Model.apellido</h1>
+            <hr />
+            <dl class="dl-horizontal">
 
-<div>
-    <h4>Empleado</h4>
-    <hr />
-    <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayName("Codigo de Empleado")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.codigoEmpleado)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.codigoEmpleado)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.codigoEmpleado)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Nombre ")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.nombre)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.nombre)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombre)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Apellido ")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.apellido)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.apellido)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.apellido)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Telefono ")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.telefono)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.telefono)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.telefono)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Fecha de Ingreso")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fechaIngreso)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.fechaIngreso)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.fechaIngreso)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Salario ")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.salario)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.salario)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.salario)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Estatus ")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.estatus)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.estatus)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.estatus)
-        </dd>
+                <dt>
+                    @Html.DisplayName("ID del Manager")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.idManager)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.idManager)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.idManager)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Codigo del Cargo")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cargo.codigoCargo)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Cargo.codigoCargo)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cargo.codigoCargo)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Codigo del Departamento")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Departamento.codigoDepartamento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Departamento.codigoDepartamento)
-        </dd>
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.Departamento.codigoDepartamento)
+                </dd>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id, @class = "boton-detalle" }) |
+            @Html.ActionLink("Volver a Lista", "Index", "Empleado", null, new { @class = "boton-atras" })
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.id, @class = "boton-detalle" }) |
-    @Html.ActionLink("Volver a Lista", "Index", "Empleado", null, new { @class = "boton-atras" })
-</p>

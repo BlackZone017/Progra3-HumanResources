@@ -235,9 +235,94 @@ body
     margin-top: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
-/**eliminar*/
 
-.boton-eliminar:hover{
+/**index grande**/
+.container-mio-4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .container-mio-4 .box-mio-4 {
+        position: relative;
+        width: 1000px;
+        padding: 40px;
+        background: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+        border-radius: 4px;
+        margin: 20px;
+        margin: 20px auto;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .container-mio-4 .box-mio-4 .icon-mio-4 {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            color: #fff;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            border-radius: 50%;
+            font-size: 40px;
+            font-weight: 700;
+            transition: 1s;
+            -o-transition: 1s;
+            -moz-transition: 1s;
+            -webkit-transition: 1s;
+        }
+
+/*index**/
+
+.boton-agregar {
+    padding: 5px 10px;
+    background: #087dbd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+    .boton-agregar:hover {
+        padding: 10px 20px;
+        background: #065b88;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        margin-top: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    }
+
+/**eliminar*/
+.boton-eliminar:hover {
+    padding: 10px 20px;
+    background: #a82913;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.boton-eliminar-2 {
+    padding: 10px 20px;
+    background: #eb3f20;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.boton-eliminar-2:hover {
     padding: 10px 20px;
     background: #a82913;
     border-radius: 4px;
@@ -272,7 +357,7 @@ body
 }
 
 
-/***Menu de informes***/
+/***Menu de procesos***/
 
 .container-mio .box-mio .icon-mio-3 {
     position: relative;
@@ -374,4 +459,163 @@ body
     font-weight: 500;
     margin-top: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+/***Menu de informes***/
+
+.container-mio .box-mio .icon-mio-4 {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    -webkit-transition: 1s;
+}
+
+.container-mio .box-mio:nth-child(1) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #023c5c;
+    background: #022a3f;
+}
+
+.container-mio .box-mio:nth-child(1):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #023c5c;
+}
+
+.container-mio .box-mio:nth-child(2) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #9fbeb1;
+    background: #9fbeb1;
+}
+
+.container-mio .box-mio:nth-child(2):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #9fbeb1;
+}
+
+.container-mio .box-mio:nth-child(3) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #6b6b6b;
+    background: #6b6b6b;
+}
+
+.container-mio .box-mio:nth-child(3):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #6b6b6b;
+}
+
+.container-mio .box-mio:nth-child(4) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #f009d1;
+    background: #f009d1;
+}
+
+.container-mio .box-mio:nth-child(4):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #f009d1;
+}
+
+.container-mio .box-mio:nth-child(5) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #eb5b7a;
+    background: #eb5b7a;
+}
+
+.container-mio .box-mio:nth-child(5):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #eb5b7a;
+}
+
+.container-mio .box-mio:nth-child(6) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #5a8da1;
+    background: #5a8da1;
+}
+
+.container-mio .box-mio:nth-child(6):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #5a8da1;
+}
+
+.container-mio .box-mio:nth-child(7) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #5aa189;
+    background: #5aa189;
+}
+
+.container-mio .box-mio:nth-child(7):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #5aa189;
+}
+
+.container-mio .box-mio:nth-child(8) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #66a15a;
+    background: #66a15a;
+}
+
+.container-mio .box-mio:nth-child(8):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #66a15a;
+}
+
+.container-mio .box-mio:nth-child(9) .icon-mio-4 {
+    box-shadow: 0 0 0 0 #a18e5a;
+    background: #a18e5a;
+}
+
+.container-mio .box-mio:nth-child(9):hover .icon-mio-4 {
+    box-shadow: 0 0 0 400px #a18e5a;
+}
+
+.container-mio .box-mio .content-mio-4 {
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
+
+.container-mio .box-mio:hover .content-mio-4 {
+    color: #fff;
+}
+
+.container-mio .box-mio .content-mio-4 h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 0;
+    font-weight: 700;
+}
+
+.container-mio .box-mio .content-mio-4 p {
+    margin: 0;
+    padding: 0;
+}
+
+.container-mio .box-mio .content-mio-4 a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+}
+
+/*encabezado*/
+
+th{
+    text-align: center;
+}
+
+.btn-buscar{
+ 
+    margin-right:20px;
+    margin-top:5px;
+}
+
+.titulo-buscar {
+    margin-right: 310px;
+}
+
+.buscar-fecha{
+    margin-right:20px;
 }

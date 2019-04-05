@@ -4,85 +4,91 @@
     ViewBag.Title = "Index";
 }
 
+<div class="container-mio-4">
+    <div class="box-mio-4">
+        <h2>Mantenimiento Empleados</h2>
 
-<h2>Mantenimiento Empleados</h2>
 
-<p>
-    @Html.ActionLink("Agregar", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.codigoEmpleado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fechaIngreso)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.salario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estatus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idManager)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cargo.codigoCargo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Departamento.codigoDepartamento)
-        </th>
-        <th></th>
-    </tr>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Codigo del Empleado")
+                </th>
+                <th>
+                    @Html.DisplayName("Nombre")
+                </th>
+                <th>
+                    @Html.DisplayName("Apellido")
+                </th>
+                <th>
+                    @Html.DisplayName("Telefono")
+                </th>
+                <th>
+                    @Html.DisplayName("Fecha de Ingreso")
+                </th>
+                <th>
+                    @Html.DisplayName("Salario")
+                </th>
+                <th>
+                    @Html.DisplayName("Estatus")
+                </th>
+                <th>
+                    @Html.DisplayName("ID del Manager")
+                </th>
+                <th>
+                    @Html.DisplayName("Codigo del Cargo")
+                </th>
+                <th>
+                    @Html.DisplayName("Codigo del Departamento")
+                </th>
+                <th></th>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.codigoEmpleado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fechaIngreso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.salario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idManager)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cargo.codigoCargo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Departamento.codigoDepartamento)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-            @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
-            @Html.ActionLink("Inactivar empleados", "Delete", new { id = item.id })
-        </td>
-    </tr>
-}
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codigoEmpleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fechaIngreso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.salario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idManager)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cargo.codigoCargo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Departamento.codigoDepartamento)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
+                        @Html.ActionLink("Inactivar empleados", "Delete", new { id = item.id }) |
+                        @Html.ActionLink("Activar empleados", "Activar", new { id = item.id })
+                    </td>
+                </tr>
+            }
 
-</table>
+        </table>
+        <p>
+            @Html.ActionLink("Agregar", "Create", "Empleado", null, new { @class = "boton-agregar" })
+        </p>
+    </div>
+    </div>

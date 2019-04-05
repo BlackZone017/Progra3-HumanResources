@@ -244,6 +244,8 @@
     <Content Include="Views\Entradas\Index.cshtml" />
     <Content Include="Views\CantSalidas\Index.cshtml" />
     <Content Include="Views\InformeVacaciones\Index.cshtml" />
+    <Content Include="Views\Home\Informes.cshtml" />
+    <Content Include="Views\Empleado\Activar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

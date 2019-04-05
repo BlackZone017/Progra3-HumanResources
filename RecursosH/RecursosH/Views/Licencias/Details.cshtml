@@ -4,55 +4,59 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Detalles</h2>
+<h2></h2>
+<div class="container-mio-2">
+    <div class="box-mio-2">
+        <div>
+            <h1>Detalles Licencia de @Model.Empleado.nombre @Model.Empleado.apellido</h1>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayName("Codigo de Empleado")
+                </dt>
 
-<div>
-    <h4>Licencia</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Empleado.codigoEmpleado)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Empleado.codigoEmpleado)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Empleado.codigoEmpleado)
-        </dd>
+                <dt>
+                    @Html.DisplayName("¿Desde Cuando?")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.desde)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.desde)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.desde)
-        </dd>
+                <dt>
+                    @Html.DisplayName("¿Hasta Cuando?")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.hasta)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.hasta)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.hasta)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Motivos")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.motivos)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.motivos)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.motivos)
-        </dd>
+                <dt>
+                    @Html.DisplayName("Comentarios")
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.comentarios)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.comentarios)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.comentarios)
-        </dd>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver a Lista", "Index", "Licencias", null, new { @class = "boton-atras" })
+        </p>
+        </div>
+    </div>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Volver a Lista", "Index")
-</p>
