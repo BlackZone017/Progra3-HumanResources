@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Informes";
+}
+
+<h2>Informes</h2>
+
+<div class="container-mio">
+
+    <div class="box-mio">
+        <div class="icon-mio-3">01</div>
+        <div class="content-mio-3">
+            <h3>Nomina</h3>
+            <p>En esta parte puedes ver la nomina actual.</p>
+            @*@Html.ActionLink("Mantenimiento", "Index", "Empleado")*@
+            <a href="#">Registrar</a>
+        </div>
+    </div>
+
+    <div class="box-mio">
+        <div class="icon-mio-3">02</div>
+        <div class="content-mio-3">
+            <h3>Salidas</h3>
+            <p>En esta parte puedes ver las salidas de los empleados.</p>
+            @Html.ActionLink("Salidas", "Index", "Salidas")
+            @*<a href="#">Registrar</a>*@
+        </div>
+    </div>
+
+    <div class="box-mio">
+        <div class="icon-mio-3">03</div>
+        <div class="content-mio-3">
+            <h3>Vacaciones</h3>
+            <p>En esta parte puedes ver las vacaciones tomadas por los empleados.</p>
+            @Html.ActionLink("Vacaciones Empleados", "Index", "Vacaciones")
+            @*<a href="#">Registrar</a>*@
+        </div>
+    </div>
+
+    <div class="box-mio">
+        <div class="icon-mio-3">04</div>
+        <div class="content-mio-3">
+            <h3>Permisos</h3>
+            <p>En esta parte puedes ver los permisos tomados por los empleados.</p>
+            @Html.ActionLink("Permisos Empleados", "Index", "Permisos")
+        </div>
+    </div>
+
+    <div class="box-mio">
+        <div class="icon-mio-3">05</div>
+        <div class="content-mio-3">
+            <h3>Licencia</h3>
+            <p>En esta parte puedes ver las licencias tomadas por los empleados..</p>
+            @Html.ActionLink("Licencias Empleados", "Index", "Licencias")
+        </div>
+    </div>
+</div>

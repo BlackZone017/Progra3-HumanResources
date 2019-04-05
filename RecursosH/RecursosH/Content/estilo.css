@@ -234,6 +234,7 @@ body
     margin-top: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
+/**eliminar*/
 
 .boton-eliminar:hover{
     padding: 10px 20px;
@@ -244,6 +245,8 @@ body
     font-weight: 500;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
+
+/**detalle*/
 
 .boton-detalle {
     padding: 10px 20px;
@@ -265,4 +268,109 @@ body
     font-weight: 500;
     margin-top: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+
+/***Menu de informes***/
+
+.container-mio .box-mio .icon-mio-3 {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    color: #fff;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 1s;
+    -o-transition: 1s;
+    -moz-transition: 1s;
+    -webkit-transition: 1s;
+}
+
+.container-mio .box-mio:nth-child(1) .icon-mio-3 {
+    box-shadow: 0 0 0 0 #1e98e9;
+    background: #1e98e9;
+}
+
+.container-mio .box-mio:nth-child(1):hover .icon-mio-3 {
+    box-shadow: 0 0 0 400px #1e98e9;
+}
+
+.container-mio .box-mio:nth-child(2) .icon-mio-3 {
+    box-shadow: 0 0 0 0 #406909;
+    background: #406909;
+}
+
+.container-mio .box-mio:nth-child(2):hover .icon-mio-3 {
+    box-shadow: 0 0 0 400px #406909;
+}
+
+.container-mio .box-mio:nth-child(3) .icon-mio-3 {
+    box-shadow: 0 0 0 0 #6b3f61;
+    background: #6b3f61;
+}
+
+.container-mio .box-mio:nth-child(3):hover .icon-mio-3 {
+    box-shadow: 0 0 0 400px #6b3f61;
+}
+
+.container-mio .box-mio:nth-child(4) .icon-mio-3 {
+    box-shadow: 0 0 0 0 #d48686;
+    background: #d48686;
+}
+
+.container-mio .box-mio:nth-child(4):hover .icon-mio-3 {
+    box-shadow: 0 0 0 400px #d48686;
+}
+
+.container-mio .box-mio:nth-child(5) .icon-mio-3 {
+    box-shadow: 0 0 0 0 #818867;
+    background: #818867;
+}
+
+.container-mio .box-mio:nth-child(5):hover .icon-mio-3 {
+    box-shadow: 0 0 0 400px #818867;
+}
+
+
+.container-mio .box-mio .content-mio-3 {
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+}
+
+.container-mio .box-mio:hover .content-mio-3 {
+    color: #fff;
+}
+
+.container-mio .box-mio .content-mio-3 h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 0;
+    font-weight: 700;
+}
+
+.container-mio .box-mio .content-mio-3 p {
+    margin: 0;
+    padding: 0;
+}
+
+.container-mio .box-mio .content-mio-3 a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
 }

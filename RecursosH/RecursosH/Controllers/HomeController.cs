@@ -13,5 +13,10 @@ namespace RecursosH.Controllers
         {
             return View();
         }
+
+        public ActionResult Procesos()
+        {
+            return View();
+        }
     }
 }
