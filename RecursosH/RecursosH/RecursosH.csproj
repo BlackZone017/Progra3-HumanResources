@@ -137,6 +137,7 @@
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
+    <Compile Include="Controllers\EmpleadosActivoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LicenciasController.cs" />
     <Compile Include="Controllers\PermisosController.cs" />
@@ -229,6 +230,7 @@
     <Content Include="Views\Licencias\Edit.cshtml" />
     <Content Include="Views\Licencias\Index.cshtml" />
     <Content Include="Views\Home\Procesos.cshtml" />
+    <Content Include="Views\EmpleadosActivoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

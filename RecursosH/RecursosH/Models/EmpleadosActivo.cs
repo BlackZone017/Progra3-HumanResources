@@ -37,7 +37,7 @@ namespace RecursosH.Models
 
         public DateTime? fechaIngreso { get; set; }
 
-        public int? salario { get; set; }
+        public decimal? salario { get; set; }
 
         [StringLength(10)]
         public string estatus { get; set; }

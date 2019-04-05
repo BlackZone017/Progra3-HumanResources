@@ -1,0 +1,103 @@
+﻿@model IEnumerable<RecursosH.Models.EmpleadosActivo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Empleados Activos</h2>
+
+<button><a href="./EmpleadosActivoes" class="btn btn-block">Buscar Todos</a></button>
+@using (Html.BeginForm("Index", "EmpleadosActivoes", FormMethod.Get))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label("Buscar por Nombre") <span></span>
+
+                @Html.TextBox("nombre")
+                <input type="submit" value="Buscar" class="btn btn-success" /><br />
+            </div>
+        </div>
+    </div>
+}
+@using (Html.BeginForm("Indexx", "EmpleadosActivoes", FormMethod.Get))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.Label("Buscar por idDepartamento") <span></span>
+
+                @Html.TextBox("idDepartamento")
+                <input type="submit" value="Buscar" class="btn btn-success" /><br />
+            </div>
+        </div>
+    </div>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigoEmpleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idManager)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idDepartamento)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigoEmpleado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fechaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idManager)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idDepartamento)
+            </td>
+        </tr>
+    }
+
+</table>
