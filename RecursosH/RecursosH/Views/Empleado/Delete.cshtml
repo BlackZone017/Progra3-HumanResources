@@ -1,14 +1,13 @@
 ﻿@model RecursosH.Models.Empleado
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Inactivar";
 }
 
-<h2>Eliminar Empleado</h2>
+<h2>Inactivar Empleado</h2>
 
-<h3>Seguro que quieres eliminar al Empleado?</h3>
+<h3>Seguro que quieres Inactivar a @Model.nombre @Model.apellido</h3>
 <div>
-    <h4>Empleado</h4>
     <hr />
     <dl class="dl-horizontal">
 
@@ -98,7 +97,7 @@
         @Html.AntiForgeryToken()
 
     <div class="form-actions no-color">
-        <input type="submit" value="Eliminar" class="btn btn-danger boton-eliminar" /> |
+        <input type="submit" value="Mover a inactivos" class="btn btn-danger boton-eliminar" /> |
         @Html.ActionLink("Volver a Lista", "Index", "Empleado", null, new { @class = "boton-atras" })
     </div>
     }
