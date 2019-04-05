@@ -20,26 +20,35 @@ namespace RecursosH.Models
 
         public int id { get; set; }
 
+        [Required(ErrorMessage = "El campo Codigo de Empleado no puede estar vacio")]
         [StringLength(6)]
         public string codigoEmpleado { get; set; }
 
+        [Required(ErrorMessage = "El campo Nombre de Empleado no puede estar vacio")]
         [StringLength(20)]
         public string nombre { get; set; }
 
+        [Required(ErrorMessage = "El campo Apellido de Empleado no puede estar vacio")]
         [StringLength(20)]
         public string apellido { get; set; }
 
+        [Required(ErrorMessage = "El campo Telefono de Empleado no puede estar vacio")]
         [StringLength(15)]
         public string telefono { get; set; }
 
+        [Required(ErrorMessage = "El campo Id del Departamento de Empleado no puede estar vacio")]
         public int idDepartamento { get; set; }
 
+        [Required(ErrorMessage = "El campo Id Cargo de Empleado no puede estar vacio")]
         public int idCargo { get; set; }
 
+        [Required(ErrorMessage = "El campo Fecha de Ingreso de Empleado no puede estar vacio")]
         public DateTime? fechaIngreso { get; set; }
 
+        [Required(ErrorMessage = "El campo Salario de Empleado no puede estar vacio")]
         public decimal? salario { get; set; }
 
+        [Required(ErrorMessage = "El campo Estatus de Empleado no puede estar vacio")]
         [StringLength(10)]
         public string estatus { get; set; }
 
