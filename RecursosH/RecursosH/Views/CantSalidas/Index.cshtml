@@ -1,0 +1,37 @@
+﻿@model IEnumerable<RecursosH.Models.CantSalida>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Salidas Empleados</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Empleado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha_Entrada)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Empleado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha_Entrada)
+        </td>
+    </tr>
+}
+
+</table>

@@ -22,6 +22,7 @@ namespace RecursosH.Models
         public virtual DbSet<Vacacione> Vacaciones { get; set; }
         public virtual DbSet<EmpleadosActivo> EmpleadosActivos { get; set; }
         public virtual DbSet<EmpleadosInactivo> EmpleadosInactivos { get; set; }
+        //public virtual DbSet<linq> { get; internal set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -134,12 +134,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CantSalidasController.cs" />
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\EmpleadosActivoesController.cs" />
     <Compile Include="Controllers\EmpleadosInactivosController.cs" />
+    <Compile Include="Controllers\EntradasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InformePermisosController.cs" />
     <Compile Include="Controllers\LicenciasController.cs" />
     <Compile Include="Controllers\PermisosController.cs" />
     <Compile Include="Controllers\SalidasController.cs" />
@@ -147,13 +150,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CantSalida.cs" />
     <Compile Include="Models\Cargo.cs" />
     <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\EmpleadosActivo.cs" />
     <Compile Include="Models\EmpleadosInactivo.cs" />
+    <Compile Include="Models\Entrada.cs" />
     <Compile Include="Models\Licencia.cs" />
     <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Model2.cs" />
     <Compile Include="Models\Nomina.cs" />
     <Compile Include="Models\Permiso.cs" />
     <Compile Include="Models\Salida.cs" />
@@ -233,6 +239,9 @@
     <Content Include="Views\Home\Procesos.cshtml" />
     <Content Include="Views\EmpleadosActivoes\Index.cshtml" />
     <Content Include="Views\EmpleadosInactivos\Index.cshtml" />
+    <Content Include="Views\InformePermisos\Index.cshtml" />
+    <Content Include="Views\Entradas\Index.cshtml" />
+    <Content Include="Views\CantSalidas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -249,6 +258,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

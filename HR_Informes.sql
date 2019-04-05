@@ -29,18 +29,16 @@ SELECT * FROM Departamento  --Vista sera generada en ASP
 Select * from Cargo			--Vista sera generada en ASP
 
 --------ENTRADAS-------
-----Entradas de empleados por mes. 
---  Visualizar las entradas (empleados creados, ingresados) 
---	en un mes determinado por el usuario 
+ALTER VIEW Entradas AS
+SELECT id, codigoEmpleado,nombre+' '+apellido as 'Empleado',CAST(fechaIngreso as varchar(12)) as 'Fecha Entrada' FROM empleado
 
---Linq en ASP para esta query
-SELECT (nombre + ' ' + apellido) "Empleado",CAST(fechaIngreso as varchar(12)) as 'Ingreso' FROM empleado
-WHERE DATEPART(Month,fechaIngreso) = 3 --Siendo 3 el mes que ponga el usuario (variable mes)
+SELECT * FROM Entradas WHERE DATENAME(MONTH,[Fecha Entrada]) = 'March'	
 
+ALTER VIEW CantSalidas AS
+SELECT e.id, (e.nombre+' '+e.apellido) as 'Empleado',CAST(s.fechaSalida as varchar(12)) as 'Fecha Entrada' FROM Salida s
+JOIN empleado e ON (s.idEmpleado = e.id)
 
 --------SALIDAS--------
---Linq en asp para esta query
---Salida de empleados por mes. Visualizar las salidas (empleados creados, ingresados) en un mes determinado por el usuario
 ALTER PROCEDURE salidasMes(@mes int)
 AS BEGIN
 SELECT e.nombre +' '+e.apellido as "Empleado" ,s.* FROM salida s
