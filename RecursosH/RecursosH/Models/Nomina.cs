@@ -14,8 +14,24 @@ namespace RecursosH.Models
 
         public int? año { get; set; }
 
-        public int? mes { get; set; }
+        public string mes { get; set; }
 
         public decimal? montoTotal { get; set; }
+    }
+
+    public enum Meses
+    {
+        January,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
     }
 }

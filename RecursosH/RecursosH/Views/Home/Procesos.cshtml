@@ -1,9 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Informes";
+    ViewBag.Title = "Procesos";
 }
 
-<h2>Informes</h2>
+<h2>Procesos</h2>
 
 <div class="container-mio">
 
@@ -11,9 +11,9 @@
         <div class="icon-mio-3">01</div>
         <div class="content-mio-3">
             <h3>Nomina</h3>
-            <p>En esta parte puedes ver la nomina actual.</p>
+            <p>En esta parte puedes trabajar con la nomina actual.</p>
             @*@Html.ActionLink("Mantenimiento", "Index", "Empleado")*@
-            <a href="#">Registrar</a>
+            @Html.ActionLink("Totalizar", "Index", "Nominas")
         </div>
     </div>
 
@@ -21,7 +21,7 @@
         <div class="icon-mio-3">02</div>
         <div class="content-mio-3">
             <h3>Salidas</h3>
-            <p>En esta parte puedes ver las salidas de los empleados.</p>
+            <p>En esta parte puedes trabajar con las salidas de los empleados.</p>
             @Html.ActionLink("Salidas", "Index", "Salidas")
         </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="icon-mio-3">03</div>
         <div class="content-mio-3">
             <h3>Vacaciones</h3>
-            <p>En esta parte puedes ver las vacaciones tomadas por los empleados.</p>
+            <p>En esta parte puedes trabajar con las vacaciones tomadas por los empleados.</p>
             @Html.ActionLink("Vacaciones Empleados", "Index", "Vacaciones")
         </div>
     </div>
@@ -39,7 +39,7 @@
         <div class="icon-mio-3">04</div>
         <div class="content-mio-3">
             <h3>Permisos</h3>
-            <p>En esta parte puedes ver los permisos tomados por los empleados.</p>
+            <p>En esta parte puedes trabajar con los permisos tomados por los empleados.</p>
             @Html.ActionLink("Permisos Empleados", "Index", "Permisos")
         </div>
     </div>
@@ -48,7 +48,7 @@
         <div class="icon-mio-3">05</div>
         <div class="content-mio-3">
             <h3>Licencia</h3>
-            <p>En esta parte puedes ver las licencias tomadas por los empleados..</p>
+            <p>En esta parte puedes trabajar con las licencias tomadas por los empleados..</p>
             @Html.ActionLink("Licencias Empleados", "Index", "Licencias")
         </div>
     </div>

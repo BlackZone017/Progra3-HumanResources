@@ -18,5 +18,10 @@ namespace RecursosH.Controllers
         {
             return View();
         }
+
+        public ActionResult Informes()
+        {
+            return View();
+        }
     }
 }

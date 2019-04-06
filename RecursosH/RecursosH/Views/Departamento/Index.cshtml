@@ -4,42 +4,46 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Mantenimiento Departamentos</h2>
 
-<p>
-    @Html.ActionLink("Agregar", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.codigoDepartamento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.idManager)
-        </th>
-        <th></th>
-    </tr>
+<div class="container-mio-2">
+    <div class="box-mio-2">
+        <h1>Mantenimiento Departamentos</h1>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.codigoDepartamento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.idManager)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.id }) |
-            @Html.ActionLink("Borrar", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Codigo del Departamento")
+                </th>
+                <th>
+                    @Html.DisplayName("Nombre")
+                </th>
+                <th>
+                    @Html.DisplayName("Id del Manager")
+                </th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.codigoDepartamento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idManager)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
+                        @Html.ActionLink("Borrar", "Delete", new { id = item.id })
+                    </td>
+                </tr>
+            }
+        </table>
+        <p>
+            @Html.ActionLink("Agregar", "Create", "Departamento", null, new { @class = "boton-agregar" })
+        </p>
+    </div>
+</div>

@@ -2,7 +2,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2></h2>
+<h1>Inicio</h1>
 
 <div class="container-mio">
     
@@ -41,7 +41,7 @@
         <div class="content-mio">
             <h3>Nomina</h3>
             <p>En esta parte puedes ver la nomina actual.</p>
-            <a href="#">Totalizar</a>
+            @Html.ActionLink("Totalizar", "Index", "Nominas")
         </div>
     </div>
 
@@ -50,8 +50,7 @@
         <div class="content-mio">
             <h3>Informes</h3>
             <p>En esta parte puedes ver los distintos informes.</p>
-            @*@Html.ActionLink("Ver Informes", "Informes", "Home")*@
-            <a href="#">Ver</a>
+            @Html.ActionLink("Ver Informes", "Informes", "Home")
         </div>
     </div>
 

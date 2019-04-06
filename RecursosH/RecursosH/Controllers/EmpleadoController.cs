@@ -131,6 +131,36 @@ namespace RecursosH.Controllers
             return RedirectToAction("Index");
         }
 
+        // GET: Empleado/Activar/5
+        public ActionResult Activar(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Empleado empleado = db.Empleadoes.Find(id);
+
+            if (empleado == null)
+            {
+                return HttpNotFound();
+            }
+            return View(empleado);
+        }
+
+        // POST: Empleado/Delete/5
+        [HttpPost, ActionName("Activar")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActivarConfirmed(int id)
+        {
+
+
+
+            Empleado empleado = db.Empleadoes.Find(id);
+            empleado.estatus = "Activo";
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
