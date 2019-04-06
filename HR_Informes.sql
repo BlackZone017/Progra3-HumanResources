@@ -35,9 +35,11 @@ SELECT id, codigoEmpleado,nombre+' '+apellido as 'Empleado',CAST(fechaIngreso as
 SELECT * FROM Entradas WHERE DATENAME(MONTH,[Fecha Entrada]) = 'March'	
 
 ALTER VIEW CantSalidas AS
-SELECT e.id, (e.nombre+' '+e.apellido) as 'Empleado',CAST(s.fechaSalida as varchar(12)) as 'Fecha Entrada' FROM Salida s
+SELECT e.id, (e.nombre+' '+e.apellido) as 'Empleado',CAST(s.fechaSalida as varchar(12)) as 'Fecha Salida' FROM Salida s
 JOIN empleado e ON (s.idEmpleado = e.id)
 
+
+SELECT * FROM CantSalidas
 --------SALIDAS--------
 ALTER PROCEDURE salidasMes(@mes int)
 AS BEGIN
