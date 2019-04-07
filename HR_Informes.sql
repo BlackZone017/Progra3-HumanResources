@@ -38,6 +38,8 @@ ALTER VIEW CantSalidas AS
 SELECT e.id, (e.nombre+' '+e.apellido) as 'Empleado',CAST(s.fechaSalida as varchar(12)) as 'Fecha Entrada' FROM Salida s
 JOIN empleado e ON (s.idEmpleado = e.id)
 
+
+SELECT * FROM CantSalidas
 --------SALIDAS--------
 ALTER PROCEDURE salidasMes(@mes int)
 AS BEGIN
