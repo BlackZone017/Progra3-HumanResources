@@ -145,6 +145,7 @@
     <Compile Include="Controllers\InformePermisosController.cs" />
     <Compile Include="Controllers\InformeVacacionesController.cs" />
     <Compile Include="Controllers\LicenciasController.cs" />
+    <Compile Include="Controllers\Nominas1Controller.cs" />
     <Compile Include="Controllers\NominasController.cs" />
     <Compile Include="Controllers\PermisosController.cs" />
     <Compile Include="Controllers\SalidasController.cs" />
@@ -248,6 +249,11 @@
     <Content Include="Views\Home\Informes.cshtml" />
     <Content Include="Views\Empleado\Activar.cshtml" />
     <Content Include="Views\Nominas\Index.cshtml" />
+    <Content Include="Views\Nominas1\Create.cshtml" />
+    <Content Include="Views\Nominas1\Delete.cshtml" />
+    <Content Include="Views\Nominas1\Details.cshtml" />
+    <Content Include="Views\Nominas1\Edit.cshtml" />
+    <Content Include="Views\Nominas1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

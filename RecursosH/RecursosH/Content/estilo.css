@@ -606,14 +606,17 @@ th{
     text-align: center;
 }
 
-.btn-buscar{
- 
-    margin-right:20px;
-    margin-top:5px;
+.btn-buscar {
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.btn-buscar-2 {
+    margin-right: 20px;
 }
 
 .titulo-buscar {
-    margin-right: 310px;
+    margin-right: 250px;
 }
 
 .buscar-fecha{

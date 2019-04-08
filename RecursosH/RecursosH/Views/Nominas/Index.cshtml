@@ -3,66 +3,68 @@
 @{
     ViewBag.Title = "Index";
 }
+<div class="container-mio-2">
+    <div class="box-mio-2">
+        <h1>Nomina</h1>
+        @using (Html.BeginForm("Index", "Nominas", FormMethod.Get))
+        {
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-10">
+                        <h3 class="titulo-buscar">Buscar por Mes</h3>
+                        @Html.DropDownList("mes",
+                            new SelectList(Enum.GetValues(typeof(Meses))),
+                                                "Seleccione",
+                            new { @class = "form-control" })
 
-<h2>Nomina</h2><br />
-<button><a href="" class="btn btn-block">Generar Nomina</a></button>
-<button><a href="./Nominas" class="btn btn-block">Buscar Todos</a></button>
-
-@using (Html.BeginForm("Index", "Nominas", FormMethod.Get))
-{
-    <div class="form-horizontal">
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.Label("Buscar por Mes") <span></span>
-                @Html.DropDownList("mes",
-                    new SelectList(Enum.GetValues(typeof(Meses))),
-                                        "Seleccione",
-                    new { @class = "form-control" })
-                
-                <input type="submit" value="Buscar" class="btn btn-success" /><br />
+                        <input type="submit" value="Buscar" class="btn btn-success btn-buscar" /><br />
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <div class="form-horizontal">
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.Label("Buscar por Año") <span></span>
-
-                @Html.TextBox("año")
-                <input type="submit" value="Buscar" class="btn btn-success" /><br />
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <h3 class="btn-buscar-2">Buscar por Año</h3>
+                        @Html.TextBox("año")
+                        <input type="submit" value="Buscar" class="btn btn-success" /><br />
+                    </div>
+                </div>
             </div>
-        </div>
+            <input type="submit" name="Button" value="Generar Nomina" class="btn btn-primary" /> <br />
+            @ViewBag.mensaje
+            <br />
+        }
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayName("Año")
+                </th>
+                <th>
+                    @Html.DisplayName("Mes")
+                </th>
+                <th>
+                    @Html.DisplayName("Monto Total de la Nomina")
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.año)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.montoTotal)
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <button><a href="./Nominas" class="btn btn-block">Buscar Todos</a></button>
     </div>
-}
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.año)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.mes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.montoTotal)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.año)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.mes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.montoTotal)
-            </td>
-        </tr>
-    }
-
-</table>
+    </div>

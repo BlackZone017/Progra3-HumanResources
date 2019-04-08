@@ -15,9 +15,9 @@ namespace RecursosH.Controllers
         private Model1 db = new Model1();
 
         // GET: Nominas
-        public ActionResult Index(string mes, string año)
+        public ActionResult Index(string mes, string año, string Button)
         {
-            var emp = from tabla in db.Nominas select tabla;
+            var emp = from tabla in db.Nominas.ToList() select tabla;
 
             if (!String.IsNullOrEmpty(mes))
             {
@@ -32,17 +32,13 @@ namespace RecursosH.Controllers
                 emp = emp.Where(tabla => tabla.año == i);
             }
 
+            if (Button == "Generar Nomina")
+            {
+                db.Database.ExecuteSqlCommand("exec Calcular_Nomina");
+                ViewBag.mensaje = "Nomina Actualizada";
+            }
+
             return View(emp.ToList());
-        }
-
-        public ActionResult CalcularNomina(string Button)
-        {
-  
-                    db.Database.ExecuteSqlCommand("exec Calcular_Nomina");
-                    ViewBag.mensaje = "Nomina Actualizada";
-                    Console.WriteLine("Manito");
-
-            return View("Index", db.Nominas.ToList());
         }
 
         protected override void Dispose(bool disposing)

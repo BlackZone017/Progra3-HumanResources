@@ -22,7 +22,7 @@ namespace RecursosH.Controllers
             if (!String.IsNullOrEmpty(nombre))
             {
                 
-                emp = emp.Where(tabla => tabla.nombre == nombre);
+                emp = emp.Where(tabla => tabla.nombre.Contains(nombre));
             }
 
             if (!String.IsNullOrEmpty(idDepartamento))
